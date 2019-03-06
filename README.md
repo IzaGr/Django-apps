@@ -40,7 +40,7 @@
 * Redis - to count 'likes'
 
 # To be done:
-* O nline shop - create some paid functionalities 
+* Online shop - create some paid functionalities 
 * Searching posts via elasticsearch
 * Improve CSS for comment system
 * More info about project is inside the 'Blog' application - see 'Idea' from main menu

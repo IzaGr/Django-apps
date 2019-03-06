@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!ou9e(c%nq=6er##9_1m%@c**g(!uqqvo6@h8+i6vv((4)7ael'
+SECRET_KEY = 'secret'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -93,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'blog',
         'USER': 'postgres',
-        'PASSWORD': 'japitole11',
+        'PASSWORD': '******',
     }
 }
 
@@ -125,8 +125,8 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.twitter.TwitterOAuth',
 ]
 
-SOCIAL_AUTH_FACEBOOK_KEY = '2252237408429158' # Facebook App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'e379d08a18fd3fcec8bce4894139279d' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = 'secret' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'secret' # Facebook App Secret
 
 
 LOGIN_REDIRECT_URL = 'account:dashboard'
