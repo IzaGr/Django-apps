@@ -1,0 +1,218 @@
+body { 
+
+    margin: 0 !important;
+	background-color: rgb(239,239,239) !important;
+	color: #b1b1b1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+main {
+    background-image: url("Background1.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+
+}
+
+.bg-dark {
+
+    transition:500ms ease;
+    background-color: #000 !important;
+}
+
+.bg-dark.scrolled {
+
+    background-color: #de840b !important;
+
+}
+
+
+
+
+#h {
+
+    width:100%;
+    text-align: center; 
+}
+
+a { 
+    color: #b1b1b1;
+    text-decoration:none; 
+}
+
+#mainmenu > ul > li a{
+
+    font-size: 17px !important;
+}
+
+#submenu{
+
+    font-size: 17px !important;
+}
+
+
+a:hover { 
+    color: #fff;
+    text-decoration:none !important; 
+}
+
+
+
+
+#content {
+
+    background-color: rgb(52,58,64, 0.8);
+    padding-top:20px;
+    padding: 30px 20px 30px 20px;
+
+}
+
+#sidebar {
+
+
+    background-color: rgb(52,58,64, 0.8);
+    padding: 30px 50px 30px 50px;
+
+
+}
+.posts
+
+{
+   
+    width:100%;
+    padding:50px;
+    margin:30px 0 30px 0;
+    display: inline-block;
+}
+
+
+#LogoPict {
+
+    height: auto;
+    max-width: 50px;
+    
+
+}
+#footerdiv{
+    text-align: center;
+    min-height:50px;
+    padding-top:40px;
+    padding-bottom:10px; 
+    margin-top:auto;
+    margin-bottom:auto; 
+    color: #b1b1b1; 
+}
+
+#footerdiv  a {
+
+    font-size:17px;
+}
+
+
+
+.bottom-footer
+{
+
+
+    min-height: 20px;
+    background-color: #000;
+    font-size: 15px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    text-align: center;
+}
+
+.footertext {
+    width: 100%;
+    text-align: center;
+    color: #b1b1b1;
+}
+
+.footer-widgets {
+
+     background-color: #343a40;
+     min-height: 150px;
+
+}
+
+#contact_container {
+    padding-top:40px;
+
+}
+
+#idea_container{
+    padding-top:40px;
+
+}
+
+.socialdivs
+{
+	width: 300px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fb
+{
+	width: 40px;
+	height: 40px;
+	float:left;
+	padding-left:10px;
+}
+.yt
+{
+	width: 40px;
+	height: 40px;
+	float:left;
+	padding-left:10px;
+	
+}
+.rss
+{
+	width: 40px;
+	height: 40px;
+	float:left;
+	padding-left:10px;
+}
+.insta
+{
+	width: 40px;
+	height: 40px;
+	float:left;
+	padding-left:10px;
+}
+.link
+{
+	width: 40px;
+	height: 40px;
+	float:left;
+	padding-left:10px;
+}
+
+img {
+    max-width:100%;
+    max-height:100%;
+
+}
+
+#PatroniteLogo {
+    max-width:150px;
+    height: auto;
+}
+
+.scrollup
+{
+    width: 45px;
+    height: 45px;
+    text-decoration:none;
+    background: url("scrollup.png") no-repeat 0px 0px;
+    position: fixed;
+    right: 15px;
+    bottom: 50px;
+    z-index: 100;
+    background-size: cover;
+    display:none;
+
+}

@@ -1,0 +1,187 @@
+{% load blog_tags %}
+
+{% load static %} 
+<!DOCTYPE html>
+<html lang="pl">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+    	<title>Wyzwanie 30 dni Blog</title>
+    	<meta name="description" content="Blog na temat stawiania sobie wyzwań">
+    	<meta name="keywords" content="wyzwanie, challange, rozwój, osobisty, self-development">
+    	<meta name="author" content="Izabela Granat">
+        <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+        
+        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+        <link href="{% static "css/blog1_1.css" %}" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+    	
+    </head>
+    <body>
+        
+        <section>
+        <div id="h"><img src="{% static "logo2.jpg" %}" alt="Logo" /></div> 
+        </section>
+        		
+        	<nav class="navbar navbar-dark bg-dark navbar-expand-md sticky-top" >
+    	       	
+        		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Navigation button">
+                	<span class="navbar-toggler-icon"></span>
+        		</button>
+        		
+        		<div class="collapse navbar-collapse" id="mainmenu">
+        		
+        			<ul class="navbar-nav mr-auto ml-auto">
+        			
+        				<li class="nav-item"><a class="nav-link"  href="{% url "blog:idea" %}">Idea</a></li>
+        				<li class="nav-item"><a class="nav-link"  href="{% url "blog:post_list" %}">Blog</a></li>
+        				
+        				 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true">Tools</a>
+        				    <div class="dropdown-menu" aria-labelledby="submenu">
+            				    <li>
+            						<li><a class="dropdown-item" href="https://wheeloflife.noomii.com" target="_blank">Fields from Wheel of life</a></li>
+            						<li><a class="dropdown-item" href="https://www.linkedin.com/pulse/how-use-8020-rule-goal-setting-brian-tracy/" target="_blank">Pareto rule</a></li>
+            						<li><a class="dropdown-item" href="https://www.mindtools.com/pages/article/smart-goals.htm" target="_blank">SMART rule</a></li>
+            					 </li>	
+                            </div>
+                       
+            				
+        				<li class="nav-item"><a class="nav-link" href="{% url "account:login" %}">Platform</a></li>
+        				<li class="nav-item"><a class="nav-link" href="{% url "blog:contact" %}">Contact</a></li>
+        			</ul>
+        		</div>
+        	</nav>
+
+
+        
+        <main>
+            <div class="container">
+            <a href="#" class="scrollup" onclick="topFunction()"></a>
+                <div class="row">
+           
+                        <div class="col-xxs-12 col-lg-8" id="content">
+                            <header>
+                            <title>{% block title %}{% endblock %}</title> 
+                            </header>
+                            <section>                      
+                
+                                {% block content %}
+                                                            
+                                {% endblock %}
+                            </section>
+                        </div>
+
+
+                        <div class="col-xxs-12 col-lg-4" id="sidebar" >             
+
+                            <nav><a href="{% url "blog:post_search" %}"><i class="fas fa-search"></i>&nbsp; Search for posts</a></br></br></nav>
+                            <header>
+                                <div>
+                                    <h3> Challange yourself! </h3>
+                                    <p> this is a blog about self-development </br>by challanging yourself 
+                                    and people around you to do certain actions for at least 30 DAYS/TIMES 
+                                    to try and decide if it's worth to continue and master your NEW HABIT. </br> </br>
+                                    Our society believe that true WISDOM is to translate KNOWLEDGE into PRACTICE! 
+                                    <br></br> Check the PLATFORM for adding your challanges! 
+                                    </br></br>
+                                     The BLOG has {% total_posts %} posts so far</p>
+                                </div>
+                            </header>
+                            <section>
+                                <div>  
+                                    <h4>Last posts</h4>
+                                    {% show_latest_posts 3 %}
+                                </div>
+                                <div>
+                                    <h4>Most commented posts</h4>
+                                    {% get_most_commented_posts as most_commented_posts %}
+                                    <ul>
+                                    {% for post in most_commented_posts %}
+                                        <li>
+                                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                        </li>                         
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </section>
+                            <footer>
+                    			<div class="socialdivs">
+                    				<div class="fb">
+                    					<p><a href="https://www.facebook.com" target="_blank"><img src="{% static "facebook.svg" %}"/></a></p>
+                    				</div>
+                    				<div class="yt">
+                    					<p><a href="https://www.youtube.com/" target="_blank"><img src="{% static "youtube.svg" %}"/></a></p>
+                    				</div>
+                    				<div class="rss">
+                    					<p><a href="{% url "blog:post_feed" %}" target="_blank"><img src="{% static "rss.svg" %}"/></a></p>
+                    				</div>
+                    				<div class="insta">
+                    					<p><a href="https://instagram.com" target="_blank"><img src="{% static "instagram.svg" %}"/></a></p>
+                    				</div>
+                    				<div class="link">
+                    					<p><a href="https://www.linkedin.com/in/izabela-granat-157069114/" target="_blank"><img src="{% static "linkedin.svg" %}"/></a></p>
+                    				</div>             				               				
+                    			</div>          			
+            		
+            		
+                    			
+                			</footer>      
+                        </div> <!--sidebar>         
+                </div> <!--row-->
+            </div> <!--container-->
+        </main>     
+        
+        <footer class="site-footer container-fluid">
+            <div class="row footer-widgets">
+                <div class="container">
+                    <div class="row">    
+                    
+                    <div class="col-xxs-12 col-md-6 col-lg-3 footer-logo" id="footerdiv" ><a href="{% url "account:login" %}"><img src="{% static "logopict.png" %}" alt="LogoPict"  id="LogoPict"/></a></div>
+                    <div class="col-xxs-12 col-md-6 col-lg-3" id="footerdiv"> <a href="{% url "account:login" %}">Challange Yourself </br> on Platform!</a>	</div>
+                    <div class="col-xxs-12 col-md-6 col-lg-3" id="footerdiv" > <a href="{% url "blog:contact" %}"> Contact Web developer </a></div>
+                    <div class="col-xxs-12 col-md-6 col-lg-3" id="footerdiv" > <a href="https://patronite.pl" > <img src="{% static "patronite.png" %}"  id="PatroniteLogo"/></a></div>	
+                    		
+                    </div> <!--row-->			
+                    			
+                </div><!--container-->
+            </div>    
+ 		   	<div class="row bottom-footer">
+    			<span class="footertext"> &copy; 2019 Designed by Izabela Granat </span>
+            </div>   		
+    	</footer>
+    	
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="{% static "js\bootstrap.min.js" %}"></script>
+    <script src="{% static "js\jquery.scrollTo.min.js" %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!--Change Color on scroll when nav becomes sticky-->
+    
+    <script>
+        var wrap = $('nav');
+        var posFromTop = wrap.offset().top
+        $(window).scroll(function(){
+        $('nav').toggleClass('scrolled', $(this).scrollTop()> posFromTop );
+        if($(this).scrollTop()>posFromTop) $('.scrollup').fadeIn();
+			else $('.scrollup').fadeOut();
+        });
+    
+
+       $('.scrollup').each(function(){
+        $(this).click(function(){ 
+            $('html,body').animate({ scrollTop: 0 }, 'slow');
+            return false; 
+        });
+    });
+          
+                    
+    </script>
+    <a href="https://www.freepik.com/free-photos-vectors/background"></a>
+    </body>    
+</html>
