@@ -1,0 +1,30 @@
+{% extends "webscrap/home.html" %}
+
+
+{% block title %}Text from the website{% endblock %}
+
+{% block content %}
+
+
+
+    
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-3 text-center" style="width: 1000px">
+				<h3>Images found: {{ count }}</h3>
+			{% for object in image_list %}
+			<div class="card text-left" style="width: 700px">
+				<div class="card-body">
+				<h6 class="card-title"><a href="{{ object.url }}">{{object.count}}. &nbsp &nbsp &nbsp{{ object.url }}</a></h6>
+				</div>
+			</div>
+			{% endfor %}
+			</div>
+ 		</div>
+
+
+	</div>
+
+
+{% endblock %}
