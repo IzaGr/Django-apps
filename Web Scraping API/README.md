@@ -20,12 +20,13 @@ To collect static data ( raw text, images) from websites.
 * automatic tests
 
 # Installing
-pip
+1.pip
 * install requests
 * install bs4
 * install pillow
 * install django-queryset-csv
-views.py
+
+2.views.py
 * choose folder path for media-roots where images should be downloaded and replace default one
 * choose website and replace default one
 
